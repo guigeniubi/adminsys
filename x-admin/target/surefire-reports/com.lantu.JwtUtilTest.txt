@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.lantu.JwtUtilTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 5.746 s <<< FAILURE! - in com.lantu.JwtUtilTest
+testParseJwt2  Time elapsed: 0.628 s  <<< ERROR!
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-09-13T16:21:17Z. Current time: 2023-09-25T15:46:55Z, a difference of 1034738528 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at com.lantu.JwtUtilTest.testParseJwt2(JwtUtilTest.java:32)
+
+testParseJwt  Time elapsed: 0.003 s  <<< ERROR!
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-09-13T16:21:17Z. Current time: 2023-09-25T15:46:55Z, a difference of 1034738659 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at com.lantu.JwtUtilTest.testParseJwt(JwtUtilTest.java:26)
+
