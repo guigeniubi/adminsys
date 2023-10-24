@@ -11,7 +11,7 @@
  Target Server Version : 80034
  File Encoding         : 65001
 
- Date: 26/09/2023 11:34:55
+ Date: 23/10/2023 18:09:27
 */
 
 SET NAMES utf8mb4;
@@ -43,7 +43,7 @@ INSERT INTO `x_menu` VALUES (2, 'sys/user', 'user', NULL, 'userList', '用户列
 INSERT INTO `x_menu` VALUES (3, 'sys/role', 'role', NULL, 'roleList', '角色列表', 'roleManage', 1, 'Y', 0);
 INSERT INTO `x_menu` VALUES (4, 'Layout', '/test', '/test/test1', 'test', '功能测试', 'form', 0, 'N', 0);
 INSERT INTO `x_menu` VALUES (5, 'test/test1', 'test1', '', 'test1', '测试点一', 'form', 4, 'Y', 0);
-INSERT INTO `x_menu` VALUES (6, 'test/test2', 'test2', '', 'test2', '测试点二', 'form', 4, 'Y', 0);
+INSERT INTO `x_menu` VALUES (6, 'test/test2', 'test2', '', 'test2', '聊天室', 'form', 4, 'Y', 0);
 INSERT INTO `x_menu` VALUES (7, 'test/test3', 'test3', '', 'test3', '测试点三', 'form', 4, 'Y', 0);
 
 -- ----------------------------
@@ -73,7 +73,7 @@ CREATE TABLE `x_role_menu`  (
   `role_id` int NULL DEFAULT NULL,
   `menu_id` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of x_role_menu
@@ -83,17 +83,21 @@ INSERT INTO `x_role_menu` VALUES (36, 14, 5);
 INSERT INTO `x_role_menu` VALUES (37, 14, 6);
 INSERT INTO `x_role_menu` VALUES (38, 14, 1);
 INSERT INTO `x_role_menu` VALUES (39, 14, 4);
-INSERT INTO `x_role_menu` VALUES (53, 1, 1);
-INSERT INTO `x_role_menu` VALUES (54, 1, 2);
-INSERT INTO `x_role_menu` VALUES (55, 1, 3);
-INSERT INTO `x_role_menu` VALUES (56, 1, 4);
-INSERT INTO `x_role_menu` VALUES (57, 1, 5);
-INSERT INTO `x_role_menu` VALUES (58, 1, 6);
-INSERT INTO `x_role_menu` VALUES (59, 1, 7);
-INSERT INTO `x_role_menu` VALUES (60, 3, 4);
-INSERT INTO `x_role_menu` VALUES (61, 3, 5);
-INSERT INTO `x_role_menu` VALUES (62, 3, 6);
-INSERT INTO `x_role_menu` VALUES (63, 3, 7);
+INSERT INTO `x_role_menu` VALUES (64, 1, 1);
+INSERT INTO `x_role_menu` VALUES (65, 1, 2);
+INSERT INTO `x_role_menu` VALUES (66, 1, 3);
+INSERT INTO `x_role_menu` VALUES (67, 1, 4);
+INSERT INTO `x_role_menu` VALUES (68, 1, 5);
+INSERT INTO `x_role_menu` VALUES (69, 1, 6);
+INSERT INTO `x_role_menu` VALUES (70, 1, 7);
+INSERT INTO `x_role_menu` VALUES (87, 2, 2);
+INSERT INTO `x_role_menu` VALUES (88, 2, 4);
+INSERT INTO `x_role_menu` VALUES (89, 2, 5);
+INSERT INTO `x_role_menu` VALUES (90, 2, 6);
+INSERT INTO `x_role_menu` VALUES (91, 2, 7);
+INSERT INTO `x_role_menu` VALUES (92, 2, 1);
+INSERT INTO `x_role_menu` VALUES (97, 3, 6);
+INSERT INTO `x_role_menu` VALUES (98, 3, 4);
 
 -- ----------------------------
 -- Table structure for x_user
@@ -109,7 +113,7 @@ CREATE TABLE `x_user`  (
   `avatar` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `deleted` int NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of x_user
@@ -125,6 +129,9 @@ INSERT INTO `x_user` VALUES (10, 'ccc', '$2a$10$q1hDJwwzp3Ayapl4qGbNcOdo/wr2MpCu
 INSERT INTO `x_user` VALUES (11, 'QWE', '$2a$10$Z86ZQP.DVSQOJ2RxjrMO0eRltI6EewhzQD8qlZ4Q406HvjbJgc/ym', 'asfasf@qq.com', 'QWEWQEWQ', 1, NULL, 1);
 INSERT INTO `x_user` VALUES (12, 'ASDSAD', '$2a$10$S/pFiB.dEFxTrTvLcAXo3Od5rPUmW8lUTjJgW0Kniap4jnd4YUkOa', '1042684036@qq.com', 'ASD', 1, NULL, 1);
 INSERT INTO `x_user` VALUES (13, 'test', '$2a$10$.yYpHd8oCFdzo7hZcH3rWep5qUwIVVkl7dn1Jg7FZbOsD0szc3ghO', 'zhouwenxuan@idea.edu.cn', '18677778888', 1, NULL, 1);
+INSERT INTO `x_user` VALUES (14, 'asd', '$2a$10$uB8awXOKVFaHufljYsSAxugEJdjiRhh2NxljJSBE7BP9UPuuJQZOe', 'sadasd', 'asdasda', 1, NULL, 0);
+INSERT INTO `x_user` VALUES (15, 'leng', '$2a$10$BUfiVavkqD8C0gfzwhNdq.4t2AoK3U8j9UlzLXPpZrtMv49/XtnSm', '1042684036@qq.com', '123456', 1, NULL, 0);
+INSERT INTO `x_user` VALUES (19, '123', '$2a$10$plSbJggKbHUYjW1RmgBMteMe667bgXuhg.zTCpdaXE0X6Q/56GDZW', 'asd', 'asd', 1, NULL, 0);
 
 -- ----------------------------
 -- Table structure for x_user_role
@@ -135,7 +142,7 @@ CREATE TABLE `x_user_role`  (
   `user_id` int NULL DEFAULT NULL,
   `role_id` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of x_user_role
@@ -146,5 +153,15 @@ INSERT INTO `x_user_role` VALUES (8, 1, 1);
 INSERT INTO `x_user_role` VALUES (9, 1, 3);
 INSERT INTO `x_user_role` VALUES (10, 2, 3);
 INSERT INTO `x_user_role` VALUES (11, 13, 3);
+INSERT INTO `x_user_role` VALUES (12, 6, 2);
+INSERT INTO `x_user_role` VALUES (13, 14, 3);
+INSERT INTO `x_user_role` VALUES (14, 15, 3);
+INSERT INTO `x_user_role` VALUES (15, 16, 3);
+INSERT INTO `x_user_role` VALUES (16, 17, 3);
+INSERT INTO `x_user_role` VALUES (17, 18, 3);
+INSERT INTO `x_user_role` VALUES (18, 15, 3);
+INSERT INTO `x_user_role` VALUES (19, 15, 3);
+INSERT INTO `x_user_role` VALUES (20, 15, 3);
+INSERT INTO `x_user_role` VALUES (21, 19, 3);
 
 SET FOREIGN_KEY_CHECKS = 1;
